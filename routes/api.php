@@ -23,6 +23,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('users', [UserController::class,'store']);
 Route::post('login', [UserController::class,'login']);
 
-Route::group(['middleware'=>'auth:api'],function(){
+Route::group(['middleware'=>'auth:sanctum'],function(){
     Route::ApiResource('opciones',OpcionController::class);
+    Route::post('logout', [UserController::class,'logout']);
 });

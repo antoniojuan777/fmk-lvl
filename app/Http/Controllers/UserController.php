@@ -75,14 +75,27 @@ class UserController extends Controller
     public function login(Request $request){
         $user = User::whereEmail($request->email)->first();
         if(!is_null($user) && Hash::check($request->password, $user->password)){
+            $token = $user->createToken('fmk-lvl-token')->plainTextToken;
             return response()->json([
                 'res' => true,
+                'token' => $token,
                 'message' => 'Bienvenido al sistema.'
             ], 200);
         } else {
             return response()->json([
                 'res' => false,
                 'message' => 'Cuenta o password incorrectos.'
+            ], 200);
+        }
+    }
+
+    public function logout(Request $request){
+        $user = User::whereEmail($request->email)->first();
+        if(!is_null($user) && Hash::check($request->password, $user->password)){
+            $user->tokens()->delete();
+            return response()->json([
+                'res' => true,
+                'message' => 'logout correcto.'
             ], 200);
         }
     }
