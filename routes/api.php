@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OpcionController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +20,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::ApiResource('opciones',OpcionController::class);
+Route::post('users', [UserController::class,'store']);
+Route::post('login', [UserController::class,'login']);
+
+Route::group(['middleware'=>'auth:api'],function(){
+    Route::ApiResource('opciones',OpcionController::class);
+});
