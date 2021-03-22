@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
 
 class UserController extends Controller
 {
@@ -73,30 +74,32 @@ class UserController extends Controller
     }
 
     public function login(Request $request){
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+            'device' => 'required',
+        ]);
+
         $user = User::whereEmail($request->email)->first();
         if(!is_null($user) && Hash::check($request->password, $user->password)){
-            $token = $user->createToken('fmk-lvl-token')->plainTextToken;
+            $token = $user->createToken($request->device)->plainTextToken;
             return response()->json([
-                'res' => true,
                 'token' => $token,
-                'message' => 'Bienvenido al sistema.'
+                'user' => $user,
+                'ok' => true
             ], 200);
         } else {
             return response()->json([
-                'res' => false,
-                'message' => 'Cuenta o password incorrectos.'
+                'ok' => false,
+                'mensaje' => 'Cuenta y/o contraseña incorrectas.'
             ], 200);
         }
     }
 
     public function logout(Request $request){
-        $user = User::whereEmail($request->email)->first();
-        if(!is_null($user) && Hash::check($request->password, $user->password)){
-            $user->tokens()->delete();
+        $request->user()->tokens()->delete();
             return response()->json([
-                'res' => true,
-                'message' => 'logout correcto.'
+                'ok' => true
             ], 200);
-        }
     }
 }
