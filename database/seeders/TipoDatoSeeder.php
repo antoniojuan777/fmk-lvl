@@ -76,6 +76,57 @@ class TipoDatoSeeder extends Seeder
                 'codigo'=>'FCO-006',
                 'valor'=>'Otro',
                 'grupo'=>'FORMAS-CONTACTOS'
+            ],
+            //paises
+            [
+                'codigo'=>'PAS-001',
+                'valor'=>'Bolivia',
+                'grupo'=>'PAISES'
+            ],
+            [
+                'codigo'=>'PAS-002',
+                'valor'=>'Argentina',
+                'grupo'=>'PAISES'
+            ],
+            [
+                'codigo'=>'PAS-003',
+                'valor'=>'Perú',
+                'grupo'=>'PAISES'
+            ],
+            [
+                'codigo'=>'PAS-004',
+                'valor'=>'Venezuela',
+                'grupo'=>'PAISES'
+            ],
+            [
+                'codigo'=>'PAS-005',
+                'valor'=>'Chile',
+                'grupo'=>'PAISES'
+            ],
+            [
+                'codigo'=>'PAS-006',
+                'valor'=>'Brasil',
+                'grupo'=>'PAISES'
+            ],
+            [
+                'codigo'=>'PAS-007',
+                'valor'=>'Paraguay',
+                'grupo'=>'PAISES'
+            ],
+            [
+                'codigo'=>'PAS-008',
+                'valor'=>'Colombia',
+                'grupo'=>'PAISES'
+            ],
+            [
+                'codigo'=>'PAS-009',
+                'valor'=>'Uruguay',
+                'grupo'=>'PAISES'
+            ],
+            [
+                'codigo'=>'PAS-010',
+                'valor'=>'Ecuador',
+                'grupo'=>'PAISES'
             ]
         ]);
     }

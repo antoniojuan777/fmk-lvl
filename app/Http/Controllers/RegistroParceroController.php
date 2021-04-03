@@ -67,6 +67,7 @@ class RegistroParceroController extends Controller
         return response()->json([
             'servicios' => TipoDato::where('grupo','SERVICIOS')->get(),
             'formasContactos' => TipoDato::where('grupo','FORMAS-CONTACTOS')->get(),
+            'paises' => TipoDato::where('grupo','PAISES')->get(),
             'ok' => true
         ], 200);
     }
