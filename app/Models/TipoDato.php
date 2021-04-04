@@ -10,10 +10,4 @@ class TipoDato extends Model
     use HasFactory;
 
     protected $table = 'tipos_datos';
-
-    protected $fillable = [
-        'codigo',
-        'valor',
-        'grupo'
-    ];
 }

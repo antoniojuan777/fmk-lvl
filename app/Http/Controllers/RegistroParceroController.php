@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\TipoDato;
+use App\Models\Parcero;
 
 class RegistroParceroController extends Controller
 {
@@ -70,5 +71,18 @@ class RegistroParceroController extends Controller
             'paises' => TipoDato::where('grupo','PAISES')->get(),
             'ok' => true
         ], 200);
+    }
+
+    public function registrar(Request $request){
+        $parcero = $request->parcero;
+
+        $parcero = Parcero::create($parcero);
+
+        return response()->json([
+            'ok' => true,
+            'mensaje' => 'Parcero registrado correctamente.',
+            'parcero' => $parcero
+        ], 200);
+        
     }
 }
