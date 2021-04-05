@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OpcionController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RegistroParceroController;
+use App\Http\Controllers\InicioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,8 @@ Route::post('login', [UserController::class,'login']);
 Route::group(['middleware'=>'auth:sanctum'],function(){
     Route::ApiResource('opciones',OpcionController::class);
     Route::post('logout', [UserController::class,'logout']);
+    //inicio
+    Route::get('datos-iniciales', [InicioController::class,'datosIniciales']);
     //registro parcero
     Route::get('registro-parcero/datos-iniciales', [RegistroParceroController::class,'datoIniciales']);
     Route::post('registro-parcero/registrar', [RegistroParceroController::class,'registrar']);

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Rol;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
@@ -81,11 +82,13 @@ class UserController extends Controller
         ]);
 
         $user = User::whereEmail($request->email)->first();
+        $rol = Rol::where('user_id',$user->id)->first();
         if(!is_null($user) && Hash::check($request->password, $user->password)){
             $token = $user->createToken($request->device)->plainTextToken;
             return response()->json([
                 'token' => $token,
                 'user' => $user,
+                'rol' => $rol,
                 'ok' => true
             ], 200);
         } else {

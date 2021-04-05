@@ -127,6 +127,28 @@ class TipoDatoSeeder extends Seeder
                 'codigo'=>'PAS-010',
                 'valor'=>'Ecuador',
                 'grupo'=>'PAISES'
+            ],
+            //roles
+            [
+                'codigo'=>'ROL-SUP',
+                'valor'=>'Super Administrador',
+                'grupo'=>'ROLES'
+            ],
+            [
+                'codigo'=>'ROL-EDU',
+                'valor'=>'Educador CE',
+                'grupo'=>'ROLES'
+            ],
+            //tipo asignacion
+            [
+                'codigo'=>'ASG-001',
+                'valor'=>'Por Registro',
+                'grupo'=>'ASIGNACIONES'
+            ],
+            [
+                'codigo'=>'ASG-002',
+                'valor'=>'Reasignación',
+                'grupo'=>'ASIGNACIONES'
             ]
         ]);
     }
