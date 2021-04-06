@@ -31,7 +31,7 @@ Route::group(['middleware'=>'auth:sanctum'],function(){
     Route::post('logout', [UserController::class,'logout']);
     Route::get('datos-iniciales', [InicioController::class,'datosIniciales']);
     //registro parcero
-    Route::get('registro-parcero/datos-iniciales', [RegistroParceroController::class,'datoIniciales']);
+    Route::post('registro-parcero/datos-iniciales', [RegistroParceroController::class,'datoIniciales']);
     Route::post('registro-parcero/registrar', [RegistroParceroController::class,'registrar']);
     //detalle parcero
     Route::post('detalle-parcero/datos-iniciales', [DetalleParceroController::class,'datosIniciales']);

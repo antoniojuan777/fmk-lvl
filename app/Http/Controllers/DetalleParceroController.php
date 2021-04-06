@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Parcero;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -66,6 +68,7 @@ class DetalleParceroController extends Controller
     {
         $parcero_id = $request->parcero_id;
 
+        $parcero = Parcero::find($parcero_id);
         $educador = DB::table('users')
             ->join('asignaciones_parceros', 'users.id', '=', 'asignaciones_parceros.user_id')
             ->where('asignaciones_parceros.actual', true)
@@ -75,6 +78,7 @@ class DetalleParceroController extends Controller
 
         return response()->json([
             'educador' => $educador,
+            'parcero'=> $parcero,
             'ok' => true
         ], 200);
     }

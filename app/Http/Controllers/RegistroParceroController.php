@@ -65,12 +65,21 @@ class RegistroParceroController extends Controller
         //
     }
 
-    public function datoIniciales()
+    public function datoIniciales(Request $request)
     {
+        $parcero_id = $request->parcero_id;
+
+        if($parcero_id){
+            $parcero=Parcero::find($parcero_id);
+        } else {
+            $parcero=null;
+        }
+
         return response()->json([
             'servicios' => TipoDato::where('grupo','SERVICIOS')->get(),
             'formasContactos' => TipoDato::where('grupo','FORMAS-CONTACTOS')->get(),
             'paises' => TipoDato::where('grupo','PAISES')->get(),
+            'parcero' => $parcero,
             'ok' => true
         ], 200);
     }
@@ -78,22 +87,39 @@ class RegistroParceroController extends Controller
     public function registrar(Request $request){
         $parcero = $request->parcero;
 
-        $asignacion['user_id_destino']=$request->user()->id;
-        $asignacion['tipo_asignacion']='ASG-001'; // Por registro
-        $asignacion = Asignacion::create($asignacion);
+        if((!isset($parcero['nombres']) || $parcero['nombres']=='')
+            && (!isset($parcero['apellidos']) || $parcero['apellidos']=='')
+            && (!isset($parcero['apodo']) || $parcero['apodo']=='')){
+                return response()->json([
+                    'ok' => false,
+                    'mensaje' => 'Debe registrar al menos el apodo.'
+                ], 200);
+        }
 
-        $parcero = Parcero::create($parcero);
-
-        $asignacionParcero['asignacion_id']=$asignacion->id;
-        $asignacionParcero['parcero_id']=$parcero->id;
-        $asignacionParcero['user_id']=$request->user()->id;
-        $asignacionParcero['actual']=true;
-
-        AsignacionParcero::create($asignacionParcero);
+        $mensaje='Parcero registrado correctamente.';
+        
+        
+        if(isset($parcero['id'])){
+            Parcero::where('id', $parcero['id'])->update($parcero);
+            $mensaje = 'Parcero modificado correctamente.';
+        } else {
+            $asignacion['user_id_destino']=$request->user()->id;
+            $asignacion['tipo_asignacion']='ASG-001'; // Por registro
+            $asignacion = Asignacion::create($asignacion);
+    
+            $parcero = Parcero::create($parcero);
+    
+            $asignacionParcero['asignacion_id']=$asignacion->id;
+            $asignacionParcero['parcero_id']=$parcero->id;
+            $asignacionParcero['user_id']=$request->user()->id;
+            $asignacionParcero['actual']=true;
+    
+            AsignacionParcero::create($asignacionParcero);
+        }
 
         return response()->json([
             'ok' => true,
-            'mensaje' => 'Parcero registrado correctamente.',
+            'mensaje' => $mensaje,
             'parcero' => $parcero
         ], 200);
         
