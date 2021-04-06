@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class InicioController extends Controller
+class DetalleParceroController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -64,19 +64,17 @@ class InicioController extends Controller
 
     public function datosIniciales(Request $request)
     {
-        $user_id = $request->user()->id;
+        $parcero_id = $request->parcero_id;
 
-        $parceros = DB::table('parceros')
-            ->join('asignaciones_parceros', 'parceros.id', '=', 'asignaciones_parceros.parcero_id')
-            ->where('asignaciones_parceros.user_id', '=', $user_id)
+        $educador = DB::table('users')
+            ->join('asignaciones_parceros', 'users.id', '=', 'asignaciones_parceros.user_id')
             ->where('asignaciones_parceros.actual', true)
-            ->select('parceros.*')
-            ->orderByDesc('parceros.updated_at')
-            ->limit(10)
-            ->get();
+            ->where('asignaciones_parceros.parcero_id', '=', $parcero_id)
+            ->select('users.*')
+            ->first();
 
         return response()->json([
-            'parceros' => $parceros,
+            'educador' => $educador,
             'ok' => true
         ], 200);
     }
