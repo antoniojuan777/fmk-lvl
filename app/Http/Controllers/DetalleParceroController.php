@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Parcero;
+use App\Models\Fuente;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class DetalleParceroController extends Controller
 {
@@ -76,9 +78,12 @@ class DetalleParceroController extends Controller
             ->select('users.*')
             ->first();
 
+        $fuente = Fuente::where('parcero_id', $parcero_id)->first();
+        
         return response()->json([
             'educador' => $educador,
             'parcero'=> $parcero,
+            'fuente'=>$fuente,
             'ok' => true
         ], 200);
     }

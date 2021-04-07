@@ -149,6 +149,73 @@ class TipoDatoSeeder extends Seeder
                 'codigo'=>'ASG-002',
                 'valor'=>'Reasignación',
                 'grupo'=>'ASIGNACIONES'
+            ],
+            //tpo conocimiento de la organizacion
+            [
+                'codigo'=>'CON-001',
+                'valor'=>'Por si misma',
+                'grupo'=>'MEDIO CONOCIMIENTO ORGANIZACION'
+            ],
+            [
+                'codigo'=>'CON-002',
+                'valor'=>'Por medio de un amigo',
+                'grupo'=>'MEDIO CONOCIMIENTO ORGANIZACION'
+            ],
+            [
+                'codigo'=>'CON-003',
+                'valor'=>'Por medio de un miembro de la familia',
+                'grupo'=>'MEDIO CONOCIMIENTO ORGANIZACION'
+            ],
+            [
+                'codigo'=>'CON-004',
+                'valor'=>'Por medio de un conocido',
+                'grupo'=>'MEDIO CONOCIMIENTO ORGANIZACION'
+            ],
+            [
+                'codigo'=>'CON-005',
+                'valor'=>'Por medio de otra institución',
+                'grupo'=>'MEDIO CONOCIMIENTO ORGANIZACION'
+            ],
+            [
+                'codigo'=>'CON-006',
+                'valor'=>'Otro',
+                'grupo'=>'MEDIO CONOCIMIENTO ORGANIZACION'
+            ],
+            [
+                'codigo'=>'CON-007',
+                'valor'=>'Por medio de la institución misma',
+                'grupo'=>'MEDIO CONOCIMIENTO ORGANIZACION'
+            ],
+            //
+            [
+                'codigo'=>'REL-001',
+                'valor'=>'Es la misma persona',
+                'grupo'=>'RELACION PACIENTE'
+            ],
+            [
+                'codigo'=>'REL-002',
+                'valor'=>'Es un amigo',
+                'grupo'=>'RELACION PACIENTE'
+            ],
+            [
+                'codigo'=>'REL-003',
+                'valor'=>'Es miembro de la familia de origen',
+                'grupo'=>'RELACION PACIENTE'
+            ],
+            [
+                'codigo'=>'REL-004',
+                'valor'=>'Miembro de su familia propia',
+                'grupo'=>'RELACION PACIENTE'
+            ],
+            [
+                'codigo'=>'REL-005',
+                'valor'=>'Es una institución, organización o grupo',
+                'grupo'=>'RELACION PACIENTE'
+            ],
+            [
+                'codigo'=>'REL-006',
+                'valor'=>'Otro',
+                'grupo'=>'RELACION PACIENTE'
             ]
         ]);
     }

@@ -97,12 +97,12 @@ class RegistroParceroController extends Controller
         }
 
         $mensaje='Parcero registrado correctamente.';
-        
-        
         if(isset($parcero['id'])){
+            //modificacion
             Parcero::where('id', $parcero['id'])->update($parcero);
             $mensaje = 'Parcero modificado correctamente.';
         } else {
+            //registro
             $asignacion['user_id_destino']=$request->user()->id;
             $asignacion['tipo_asignacion']='ASG-001'; // Por registro
             $asignacion = Asignacion::create($asignacion);

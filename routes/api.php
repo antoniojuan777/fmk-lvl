@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\RegistroParceroController;
 use App\Http\Controllers\InicioController;
 use App\Http\Controllers\DetalleParceroController;
+use App\Http\Controllers\RegistroFuenteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,4 +36,6 @@ Route::group(['middleware'=>'auth:sanctum'],function(){
     Route::post('registro-parcero/registrar', [RegistroParceroController::class,'registrar']);
     //detalle parcero
     Route::post('detalle-parcero/datos-iniciales', [DetalleParceroController::class,'datosIniciales']);
+    //registro fuente
+    Route::post('registro-fuente/datos-iniciales', [RegistroFuenteController::class,'datoIniciales']);
 });
