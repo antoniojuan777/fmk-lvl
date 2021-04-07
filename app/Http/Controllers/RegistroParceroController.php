@@ -99,6 +99,7 @@ class RegistroParceroController extends Controller
         $mensaje='Parcero registrado correctamente.';
         if(isset($parcero['id'])){
             //modificacion
+            $parcero['updated_at']=now();
             Parcero::where('id', $parcero['id'])->update($parcero);
             $mensaje = 'Parcero modificado correctamente.';
         } else {

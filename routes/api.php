@@ -38,4 +38,5 @@ Route::group(['middleware'=>'auth:sanctum'],function(){
     Route::post('detalle-parcero/datos-iniciales', [DetalleParceroController::class,'datosIniciales']);
     //registro fuente
     Route::post('registro-fuente/datos-iniciales', [RegistroFuenteController::class,'datoIniciales']);
+    Route::post('registro-fuente/registrar', [RegistroFuenteController::class,'registrar']);
 });
