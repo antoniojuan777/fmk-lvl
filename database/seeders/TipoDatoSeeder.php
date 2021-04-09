@@ -330,6 +330,37 @@ class TipoDatoSeeder extends Seeder
                 'codigo'=>'EFA-006',
                 'valor'=>'Pareja sin matrimonio',
                 'grupo'=>'ESTRUCTURA FAMILIAR'
+            ],
+            //ESCOLARIDAD
+            [
+                'codigo'=>'ESC-001',
+                'valor'=>'Primaria completa (6 años)',
+                'grupo'=>'ESCOLARIDAD'
+            ],
+            [
+                'codigo'=>'ESC-002',
+                'valor'=>'Secundaria  (6 + 3)',
+                'grupo'=>'ESCOLARIDAD'
+            ],
+            [
+                'codigo'=>'ESC-003',
+                'valor'=>'Diploma universitario (tecnico)',
+                'grupo'=>'ESCOLARIDAD'
+            ],
+            [
+                'codigo'=>'ESC-004',
+                'valor'=>'Diploma universitario (profesional)',
+                'grupo'=>'ESCOLARIDAD'
+            ],
+            [
+                'codigo'=>'ESC-005',
+                'valor'=>'Postgrado',
+                'grupo'=>'ESCOLARIDAD'
+            ],
+            [
+                'codigo'=>'ESC-006',
+                'valor'=>'Otro',
+                'grupo'=>'ESCOLARIDAD'
             ]
         ]);
     }
