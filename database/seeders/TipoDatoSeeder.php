@@ -216,6 +216,120 @@ class TipoDatoSeeder extends Seeder
                 'codigo'=>'REL-006',
                 'valor'=>'Otro',
                 'grupo'=>'RELACION PACIENTE'
+            ],
+            //ESTADOS FAMILIARES
+            [
+                'codigo'=>'FAM-001',
+                'valor'=>'Soltero/a',
+                'grupo'=>'ESTADO FAMILIAR'
+            ],
+            [
+                'codigo'=>'FAM-002',
+                'valor'=>'Casado/a',
+                'grupo'=>'ESTADO FAMILIAR'
+            ],
+            [
+                'codigo'=>'FAM-003',
+                'valor'=>'Separado/a',
+                'grupo'=>'ESTADO FAMILIAR'
+            ],
+            [
+                'codigo'=>'FAM-004',
+                'valor'=>'Viudo/a',
+                'grupo'=>'ESTADO FAMILIAR'
+            ],
+            [
+                'codigo'=>'FAM-005',
+                'valor'=>'Divorciado/a',
+                'grupo'=>'ESTADO FAMILIAR'
+            ],
+            [
+                'codigo'=>'FAM-006',
+                'valor'=>'Poligamia',
+                'grupo'=>'ESTADO FAMILIAR'
+            ],
+            [
+                'codigo'=>'FAM-007',
+                'valor'=>'Unión Libre',
+                'grupo'=>'ESTADO FAMILIAR'
+            ],
+            [
+                'codigo'=>'FAM-008',
+                'valor'=>'Otro',
+                'grupo'=>'ESTADO FAMILIAR'
+            ],
+            //NUMERO MATRIMONIO
+            [
+                'codigo'=>'NMT-001',
+                'valor'=>'Primer Matrimonio',
+                'grupo'=>'NUMERO MATRIMONIO'
+            ],
+            [
+                'codigo'=>'NMT-002',
+                'valor'=>'Segundo Matrimonio',
+                'grupo'=>'NUMERO MATRIMONIO'
+            ],
+            [
+                'codigo'=>'NMT-003',
+                'valor'=>'Tercer Matrimonio',
+                'grupo'=>'NUMERO MATRIMONIO'
+            ],
+            [
+                'codigo'=>'NMT-004',
+                'valor'=>'Otro',
+                'grupo'=>'NUMERO MATRIMONIO'
+            ],
+            //NUMERO ESPOSO
+            [
+                'codigo'=>'NES-001',
+                'valor'=>'Primer Esposo/a',
+                'grupo'=>'NUMERO ESPOSO'
+            ],
+            [
+                'codigo'=>'NES-002',
+                'valor'=>'Segundo Esposo/a',
+                'grupo'=>'NUMERO ESPOSO'
+            ],
+            [
+                'codigo'=>'NES-003',
+                'valor'=>'Tercer Esposo/a',
+                'grupo'=>'NUMERO ESPOSO'
+            ],
+            [
+                'codigo'=>'NES-004',
+                'valor'=>'Otro',
+                'grupo'=>'NUMERO ESPOSO'
+            ],
+            //ESTRUCTURA FAMILIAR
+            [
+                'codigo'=>'EFA-001',
+                'valor'=>'Vive Solo/a',
+                'grupo'=>'ESTRUCTURA FAMILIAR'
+            ],
+            [
+                'codigo'=>'EFA-002',
+                'valor'=>'Vive Solo/a con hijos/as',
+                'grupo'=>'ESTRUCTURA FAMILIAR'
+            ],
+            [
+                'codigo'=>'EFA-003',
+                'valor'=>'Familia nuclear',
+                'grupo'=>'ESTRUCTURA FAMILIAR'
+            ],
+            [
+                'codigo'=>'EFA-004',
+                'valor'=>'Familia sin matrimonio formal',
+                'grupo'=>'ESTRUCTURA FAMILIAR'
+            ],
+            [
+                'codigo'=>'EFA-005',
+                'valor'=>'Otro',
+                'grupo'=>'ESTRUCTURA FAMILIAR'
+            ],
+            [
+                'codigo'=>'EFA-006',
+                'valor'=>'Pareja sin matrimonio',
+                'grupo'=>'ESTRUCTURA FAMILIAR'
             ]
         ]);
     }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Parcero;
 use App\Models\Fuente;
+use App\Models\Familia;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -79,11 +80,13 @@ class DetalleParceroController extends Controller
             ->first();
 
         $fuente = Fuente::where('parcero_id', $parcero_id)->first();
+        $familia = Familia::where('parcero_id', $parcero_id)->first();
         
         return response()->json([
             'educador' => $educador,
             'parcero'=> $parcero,
             'fuente'=>$fuente,
+            'familia'=>$familia,
             'ok' => true
         ], 200);
     }
