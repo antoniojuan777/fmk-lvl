@@ -9,6 +9,8 @@ use App\Http\Controllers\InicioController;
 use App\Http\Controllers\DetalleParceroController;
 use App\Http\Controllers\RegistroFuenteController;
 use App\Http\Controllers\RegistroFamiliaController;
+use App\Http\Controllers\RegistroEmpleoController;
+use App\Http\Controllers\RegistroCondicionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,4 +45,10 @@ Route::group(['middleware'=>'auth:sanctum'],function(){
     //registro familia
     Route::post('registro-familia/datos-iniciales', [RegistroFamiliaController::class,'datoIniciales']);
     Route::post('registro-familia/registrar', [RegistroFamiliaController::class,'registrar']);
+    //registro empleo
+    Route::post('registro-empleo/datos-iniciales', [RegistroEmpleoController::class,'datoIniciales']);
+    Route::post('registro-empleo/registrar', [RegistroEmpleoController::class,'registrar']);
+    //registro condicion
+    Route::post('registro-condicion/datos-iniciales', [RegistroCondicionController::class,'datoIniciales']);
+    Route::post('registro-condicion/registrar', [RegistroCondicionController::class,'registrar']);
 });

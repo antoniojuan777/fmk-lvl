@@ -361,6 +361,52 @@ class TipoDatoSeeder extends Seeder
                 'codigo'=>'ESC-006',
                 'valor'=>'Otro',
                 'grupo'=>'ESCOLARIDAD'
+            ],
+            //EMPLEO
+            [
+                'codigo'=>'EMP-001',
+                'valor'=>'Altos ejecutivos, profesionales, dueños de grandes empresas',
+                'grupo'=>'EMPLEO'
+            ],
+            [
+                'codigo'=>'EMP-002',
+                'valor'=>'Gerentes profesionales (enfermeros, optómetras, framacéuticos, profesores, etc.)',
+                'grupo'=>'EMPLEO'
+            ],
+            [
+                'codigo'=>'EMP-003',
+                'valor'=>'Personal administrativo, gerentes, profesionales, dueños de pequeños negocios (panaderia, etc)',
+                'grupo'=>'EMPLEO'
+            ],
+            [
+                'codigo'=>'EMP-004',
+                'valor'=>'Trabajadores de oficina y vendedores, técnicos, comercios pequeños',
+                'grupo'=>'EMPLEO'
+            ],
+            [
+                'codigo'=>'EMP-005',
+                'valor'=>'Trabajadores diestros con entrenamiento previo (panadero, barbero, electricista, bombero, etc)',
+                'grupo'=>'EMPLEO'
+            ],
+            [
+                'codigo'=>'EMP-006',
+                'valor'=>'Semi-diestro (ayudante de hospital, camarero, conductor, cocinero, guardia, etc)',
+                'grupo'=>'EMPLEO'
+            ],
+            [
+                'codigo'=>'EMP-007',
+                'valor'=>'trabajadores no diestros (servicio doméstico, ayudante construcción, obrero, etc.)',
+                'grupo'=>'EMPLEO'
+            ],
+            [
+                'codigo'=>'EMP-008',
+                'valor'=>'Ama de casa',
+                'grupo'=>'EMPLEO'
+            ],
+            [
+                'codigo'=>'EMP-009',
+                'valor'=>'Estudiantes, personas con incapacidades, personas sin profesión',
+                'grupo'=>'EMPLEO'
             ]
         ]);
     }

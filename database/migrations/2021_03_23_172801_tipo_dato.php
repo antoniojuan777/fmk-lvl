@@ -15,7 +15,7 @@ class TipoDato extends Migration
     {
         Schema::create('tipos_datos', function (Blueprint $table) {
             $table->string('codigo', 10);
-            $table->string('valor', 50);
+            $table->string('valor', 100);
             $table->string('grupo', 50);
             $table->timestamps();
             $table->primary('codigo');

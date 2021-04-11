@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Parcero;
 use App\Models\Fuente;
 use App\Models\Familia;
+use App\Models\Empleo;
+use App\Models\Condicion;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -81,12 +83,16 @@ class DetalleParceroController extends Controller
 
         $fuente = Fuente::where('parcero_id', $parcero_id)->first();
         $familia = Familia::where('parcero_id', $parcero_id)->first();
+        $empleo = Empleo::where('parcero_id', $parcero_id)->first();
+        $condicion = Condicion::where('parcero_id', $parcero_id)->first();
         
         return response()->json([
             'educador' => $educador,
             'parcero'=> $parcero,
             'fuente'=>$fuente,
             'familia'=>$familia,
+            'empleo'=>$empleo,
+            'condicion'=>$condicion,
             'ok' => true
         ], 200);
     }
