@@ -8,6 +8,7 @@ use App\Models\Familia;
 use App\Models\Empleo;
 use App\Models\Condicion;
 use App\Models\Peticion;
+use App\Models\Respuesta;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -87,6 +88,7 @@ class DetalleParceroController extends Controller
         $empleo = Empleo::where('parcero_id', $parcero_id)->first();
         $condicion = Condicion::where('parcero_id', $parcero_id)->first();
         $peticion = Peticion::where('parcero_id', $parcero_id)->first();
+        $respuesta = Respuesta::where('parcero_id', $parcero_id)->first();
         
         return response()->json([
             'educador' => $educador,
@@ -96,6 +98,7 @@ class DetalleParceroController extends Controller
             'empleo'=>$empleo,
             'condicion'=>$condicion,
             'peticion'=>$peticion,
+            'respuesta'=>$respuesta,
             'ok' => true
         ], 200);
     }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Empleo extends Migration
+class Resultado extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class Empleo extends Migration
      */
     public function up()
     {
-        Schema::create('empleos', function (Blueprint $table) {
+        Schema::create('resultados', function (Blueprint $table) {
             $table->id();
-            $table->boolean('nunca_empleado')->default(false);
-            $table->boolean('sin_empleo')->default(false);
-            $table->string('empleo',10)->unsigned()->nullable();
-            $table->foreign('empleo')->references('codigo')->on('tipos_datos');
+            $table->string('resultado',10)->unsigned()->nullable();
+            $table->foreign('resultado')->references('codigo')->on('tipos_datos');
             $table->boolean('otro')->default(false);
             $table->string('descripcion_otro',50)->nullable();
             $table->integer('parcero_id')->unsigned();
@@ -34,6 +32,6 @@ class Empleo extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('empleos');
+        Schema::dropIfExists('resultados');
     }
 }

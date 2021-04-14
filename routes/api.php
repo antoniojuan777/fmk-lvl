@@ -12,6 +12,7 @@ use App\Http\Controllers\RegistroFamiliaController;
 use App\Http\Controllers\RegistroEmpleoController;
 use App\Http\Controllers\RegistroCondicionController;
 use App\Http\Controllers\RegistroPeticionController;
+use App\Http\Controllers\RegistroRespuestaResultadoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,4 +56,7 @@ Route::group(['middleware'=>'auth:sanctum'],function(){
     //registro peticion
     Route::post('registro-peticion/datos-iniciales', [RegistroPeticionController::class,'datoIniciales']);
     Route::post('registro-peticion/registrar', [RegistroPeticionController::class,'registrar']);
+    //registro respuesta resultado
+    Route::post('registro-respuesta-resultado/datos-iniciales', [RegistroRespuestaResultadoController::class,'datoIniciales']);
+    Route::post('registro-respuesta-resultado/registrar', [RegistroRespuestaResultadoController::class,'registrar']);
 });

@@ -407,6 +407,32 @@ class TipoDatoSeeder extends Seeder
                 'codigo'=>'EMP-009',
                 'valor'=>'Estudiantes, personas con incapacidades, personas sin profesión',
                 'grupo'=>'EMPLEO'
+            ],
+            //resultado
+            [
+                'codigo'=>'RES-001',
+                'valor'=>'Acudió a la cita',
+                'grupo'=>'RESULTADO'
+            ],
+            [
+                'codigo'=>'RES-002',
+                'valor'=>'Siguió en contacto',
+                'grupo'=>'RESULTADO'
+            ],
+            [
+                'codigo'=>'RES-003',
+                'valor'=>'Interrumpió el contacto',
+                'grupo'=>'RESULTADO'
+            ],
+            [
+                'codigo'=>'RES-004',
+                'valor'=>'Inicia un programa en la institución',
+                'grupo'=>'RESULTADO'
+            ],
+            [
+                'codigo'=>'RES-005',
+                'valor'=>'Inclusión en actividades de outreach',
+                'grupo'=>'RESULTADO'
             ]
         ]);
     }
